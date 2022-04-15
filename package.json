@@ -1,0 +1,24 @@
+{
+  "name": "integration2_tp2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AfroBlu2/Integration2_TP2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AfroBlu2/Integration2_TP2/issues"
+  },
+  "homepage": "https://github.com/AfroBlu2/Integration2_TP2#readme",
+  "dependencies": {
+    "bootstrap": "^5.1.3",
+    "sass": "^1.50.0"
+  }
+}
