@@ -16,12 +16,12 @@ def creation():
     return render_template('creation.html', page_title='Creation')
 
 @app.route('/personnages-crees')
-def creation():
+def personnages_crees():
     return render_template('personnages-crees.html', page_title='Personnages Crees')
 
 @app.route('/personnage-par-defaut')
-def creation():
+def personnage_par_defaut():
     return render_template('personnage-par-defaut.html', page_title='Personnage-Par-Defaut')
 
 if __name__ == "__main__":
-    app.run(debug=true)
+    app.run(debug=True)
