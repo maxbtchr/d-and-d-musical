@@ -12,10 +12,17 @@
 
     </header>
     <main>
-        {% block contenu %} {% endblock %}
+        <div class="row">
+            <div class="col-2 bg-secondary">
+                <p>Accueil</p>
+                <p>Créer musicien</p>
+                <p>Musiciens créés</p>
+            </div>
+            {% block contenu %} {% endblock %}
+        </div>
     </main>
     <footer>
-        
+
     </footer>
 </body>
 </html>
