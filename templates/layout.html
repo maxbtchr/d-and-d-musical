@@ -29,7 +29,7 @@
                         </li>
                     </ul>
                     <form class="d-flex">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <input class="form-control me-2" type="search" placeholder="Recherche" aria-label="Recherche">
                         <button type="button" class="btn btn-outline-success" data-bs-toggle="modal"
                             data-bs-target="#rechercheModal"><i class="bi bi-search"></i></button>
                         <div class="modal fade" id="rechercheModal" tabindex="-1" aria-labelledby="rechercheModalLabel"
@@ -43,7 +43,7 @@
                                     </div>
                                     <div class="modal-body">
                                         <div class="list-group">
-                                            <p class="h5">Cherchez-vous un de ces liens ?</p>
+                                            <p class="fs-4">Cherchez-vous un de ces liens ?</p>
                                             <a href="accueil" class="list-group-item list-group-item-action">Accueil</a>
                                             <a href="creation" class="list-group-item list-group-item-action">Création
                                                 de musiciens</a>
@@ -67,6 +67,31 @@
     </header>
     <main>
         <div class="container-fluid">
+            {% if page_active == "creation" %}
+            <nav aria-label="fil-d-ariane">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Accueil</a></li>
+                    <li class="breadcrumb-item"><a href="#">Musiciens</a></li>
+                    <li class="breadcrumb-item active" aria-current="page-actuelle">Créer un musicien</li>
+                </ol>
+            </nav>
+            {% elif page_active == "personnages_crees" %}
+            <nav aria-label="fil-d-ariane">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Accueil</a></li>
+                    <li class="breadcrumb-item"><a href="#">Musiciens</a></li>
+                    <li class="breadcrumb-item active" aria-current="page-actuelle">Musiciens créés</li>
+                </ol>
+            </nav>
+            {% elif page_active == "personnage_par_defaut" %}
+            <nav aria-label="fil-d-ariane">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Accueil</a></li>
+                    <li class="breadcrumb-item"><a href="#">Musiciens</a></li>
+                    <li class="breadcrumb-item active" aria-current="page-actuelle">Musicien par défaut</li>
+                </ol>
+            </nav>
+            {% endif %}
             <div class="row">
                 <div class="col-lg-2">
                     <div class="list-group" id="list-tab" role="tablist">
@@ -74,7 +99,7 @@
                         <a class="list-group-item list-group-item-action" href="accueil" role="tab"
                             aria-controls="liste-accueil">Accueil</a>
                         <a class="list-group-item list-group-item-action active" href="creation" role="tab"
-                            aria-controls="liste-creation">Création de musicien</a>
+                            aria-controls="liste-creation">Créer un musicien</a>
                         <a class="list-group-item list-group-item-action" href="personnages-crees" role="tab"
                             aria-controls="liste-personnages-crees">Musiciens créés</a>
                         <a class="list-group-item list-group-item-action" href="personnage-par-defaut" role="tab"
@@ -84,7 +109,7 @@
                         <a class="list-group-item list-group-item-action" href="accueil" role="tab"
                             aria-controls="liste-accueil">Accueil</a>
                         <a class="list-group-item list-group-item-action" href="creation" role="tab"
-                            aria-controls="liste-creation">Création de musicien</a>
+                            aria-controls="liste-creation">Créer un musicien</a>
                         <a class="list-group-item list-group-item-action active" href="personnages-crees" role="tab"
                             aria-controls="liste-personnages-crees">Musiciens créés</a>
                         <a class="list-group-item list-group-item-action" href="personnage-par-defaut" role="tab"
@@ -94,7 +119,7 @@
                         <a class="list-group-item list-group-item-action" href="accueil" role="tab"
                             aria-controls="liste-accueil">Accueil</a>
                         <a class="list-group-item list-group-item-action" href="creation" role="tab"
-                            aria-controls="liste-creation">Création de musicien</a>
+                            aria-controls="liste-creation">Créer un musicien</a>
                         <a class="list-group-item list-group-item-action" href="personnages-crees" role="tab"
                             aria-controls="liste-personnages-crees">Musiciens créés</a>
                         <a class="list-group-item list-group-item-action active" href="personnage-par-defaut" role="tab"
@@ -104,7 +129,7 @@
                         <a class="list-group-item list-group-item-action active" href="accueil" role="tab"
                             aria-controls="liste-accueil">Accueil</a>
                         <a class="list-group-item list-group-item-action" href="creation" role="tab"
-                            aria-controls="liste-creation">Création de musicien</a>
+                            aria-controls="liste-creation">Créer un musicien</a>
                         <a class="list-group-item list-group-item-action" href="personnages-crees" role="tab"
                             aria-controls="liste-personnages-crees">Musiciens créés</a>
                         <a class="list-group-item list-group-item-action" href="personnage-par-defaut" role="tab"
@@ -131,7 +156,7 @@
                         arrivé.</p>
                 </blockquote>
                 <figcaption class="blockquote-footer">
-                    Steve Harris, <cite title="nom-du-groupe">Iron Maiden</cite>
+                    Steve Harris, bassiste de <cite title="nom-du-groupe">Iron Maiden</cite>
                 </figcaption>
             </figure>
         </div>
