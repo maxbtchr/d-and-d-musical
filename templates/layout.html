@@ -70,6 +70,37 @@
             <div class="row">
                 <div class="col-lg-2">
                     <div class="list-group" id="list-tab" role="tablist">
+                        {% if page_active == "creation" %}
+                        <a class="list-group-item list-group-item-action" href="accueil" role="tab"
+                            aria-controls="liste-accueil">Accueil</a>
+                        <a class="list-group-item list-group-item-action active" href="creation" role="tab"
+                            aria-controls="liste-creation">Création de musicien</a>
+                        <a class="list-group-item list-group-item-action" href="personnages-crees" role="tab"
+                            aria-controls="liste-personnages-crees">Musiciens créés</a>
+                        <a class="list-group-item list-group-item-action" href="personnage-par-defaut" role="tab"
+                            aria-controls="list-personnage-par-defaut">Musicien par défaut</a>
+
+                        {% elif page_active == "personnages_crees" %}
+                        <a class="list-group-item list-group-item-action" href="accueil" role="tab"
+                            aria-controls="liste-accueil">Accueil</a>
+                        <a class="list-group-item list-group-item-action" href="creation" role="tab"
+                            aria-controls="liste-creation">Création de musicien</a>
+                        <a class="list-group-item list-group-item-action active" href="personnages-crees" role="tab"
+                            aria-controls="liste-personnages-crees">Musiciens créés</a>
+                        <a class="list-group-item list-group-item-action" href="personnage-par-defaut" role="tab"
+                            aria-controls="list-personnage-par-defaut">Musicien par défaut</a>
+
+                        {% elif page_active == "personnage_par_defaut" %}
+                        <a class="list-group-item list-group-item-action" href="accueil" role="tab"
+                            aria-controls="liste-accueil">Accueil</a>
+                        <a class="list-group-item list-group-item-action" href="creation" role="tab"
+                            aria-controls="liste-creation">Création de musicien</a>
+                        <a class="list-group-item list-group-item-action" href="personnages-crees" role="tab"
+                            aria-controls="liste-personnages-crees">Musiciens créés</a>
+                        <a class="list-group-item list-group-item-action active" href="personnage-par-defaut" role="tab"
+                            aria-controls="list-personnage-par-defaut">Musicien par défaut</a>
+
+                        {% else %}
                         <a class="list-group-item list-group-item-action active" href="accueil" role="tab"
                             aria-controls="liste-accueil">Accueil</a>
                         <a class="list-group-item list-group-item-action" href="creation" role="tab"
@@ -78,6 +109,8 @@
                             aria-controls="liste-personnages-crees">Musiciens créés</a>
                         <a class="list-group-item list-group-item-action" href="personnage-par-defaut" role="tab"
                             aria-controls="list-personnage-par-defaut">Musicien par défaut</a>
+
+                        {% endif %}
                     </div>
                 </div>
                 {% block contenu %} {% endblock %}
@@ -89,16 +122,18 @@
             <ul class="row nav justify-content-center pb-3 mb-3">
                 <li class="col-md-2 nav-item"><a href="#" class="nav-link text-center">Contactez-nous</a></li>
                 <li class="col-md-2 nav-item"><a href="#" class="nav-link text-center">Conditions d'utilisation</a></li>
-                <li class="col-md-2 nav-item"><a href="#" class="nav-link text-center">Politique de confidentialité</a></li>
+                <li class="col-md-2 nav-item"><a href="#" class="nav-link text-center">Politique de confidentialité</a>
+                </li>
             </ul>
             <figure class="text-center">
                 <blockquote class="blockquote">
-                  <p>Lorsque nous avons débuté, nous ne pensions pas devenir un groupe mondial. C'est simplement arrivé.</p>
+                    <p>Lorsque nous avons débuté, nous ne pensions pas devenir un groupe mondial. C'est simplement
+                        arrivé.</p>
                 </blockquote>
                 <figcaption class="blockquote-footer">
-                  Steve Harris, <cite title="nom-du-groupe">Iron Maiden</cite>
+                    Steve Harris, <cite title="nom-du-groupe">Iron Maiden</cite>
                 </figcaption>
-              </figure>
+            </figure>
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
