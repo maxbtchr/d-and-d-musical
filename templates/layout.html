@@ -13,15 +13,15 @@
     <header>
         <a href="#contenu"></a>
         <h1 class="visually-hidden">
-            <a href="">Dongeons et dragons: Rock Band</a>
+            <a href="http://127.0.0.1:5000/">Donjons et dragons: Rock Band</a>
         </h1>
-        <nav arialabelledby="menu-secondaire" class="navbar navbar-expand-sm navbar-light bg-light">
+        <nav arialabelledby="menu-secondaire" class="navbar navbar-expand-md navbar-light bg-light">
             <h2 id="menu-secondaire" class="visually-hidden">Menu secondaire</h2>
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">Navbar</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#contenuNavigation" aria-controls="contenuNavigation"
-                    aria-expanded="false" aria-label="Toggle navigation">
+                    data-bs-target="#contenuNavigation" aria-controls="contenuNavigation" aria-expanded="false"
+                    aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="contenuNavigation">
@@ -36,7 +36,11 @@
                     <form class="d-flex">
                         <input class="form-control me-2" type="search" placeholder="Recherche" aria-label="Recherche">
                         <button type="button" class="btn btn-outline-success" data-bs-toggle="modal"
-                            data-bs-target="#rechercheModal"><i class="bi bi-search"></i></button>
+                            data-bs-target="#rechercheModal"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                <path
+                                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                            </svg></button>
                         <div class="modal fade" id="rechercheModal" tabindex="-1" aria-labelledby="rechercheModalLabel"
                             aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered">
@@ -69,81 +73,78 @@
                 </div>
             </div>
         </nav>
-        {% if page_active == "creation" %}
-        <nav aria-label="fil-d-ariane">
+        {% if titre_page == "Création" %}
+        <nav class="container-fluid" aria-label="fil-dariane">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#">Accueil</a></li>
-                <li class="breadcrumb-item"><a href="#">Musiciens</a></li>
+                <li class="breadcrumb-item"><a href="accueil">Accueil</a></li>
+                <li class="breadcrumb-item"><a href="personnages-crees">Musiciens</a></li>
                 <li class="breadcrumb-item active" aria-current="page-actuelle">Créer un musicien</li>
             </ol>
         </nav>
-        {% elif page_active == "personnages_crees" %}
-        <nav aria-label="fil-d-ariane">
+        {% elif titre_page == "Musiciens créés" %}
+        <nav class="container-fluid" aria-label="fil-dariane">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#">Accueil</a></li>
-                <li class="breadcrumb-item"><a href="#">Musiciens</a></li>
+                <li class="breadcrumb-item"><a href="accueil">Accueil</a></li>
+                <li class="breadcrumb-item"><a href="personnages-crees">Musiciens</a></li>
                 <li class="breadcrumb-item active" aria-current="page-actuelle">Musiciens créés</li>
             </ol>
         </nav>
-        {% elif page_active == "personnage_par_defaut" %}
-        <nav aria-label="fil-d-ariane">
+        {% elif titre_page == "Musicien par défaut" %}
+        <nav class="container-fluid" aria-label="fil-dariane">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#">Accueil</a></li>
-                <li class="breadcrumb-item"><a href="#">Musiciens</a></li>
+                <li class="breadcrumb-item"><a href="accueil">Accueil</a></li>
+                <li class="breadcrumb-item"><a href="personnages-crees">Musiciens</a></li>
                 <li class="breadcrumb-item active" aria-current="page-actuelle">Musicien par défaut</li>
             </ol>
         </nav>
         {% endif %}
     </header>
-    <main class="container-fluid" id="contenu">
-        <div class="row">
-            <section class="col-lg-2">
-                <nav aria-labelledby="menu-principal" class="list-group" id="list-tab" role="tablist">
-                    <h2 id="menu-principal" class="visually-hidden">Menu principal</h2>
-                    {% if page_active == "creation" %}
-                    <a class="list-group-item list-group-item-action" href="accueil" role="tab"
-                        aria-controls="liste-accueil">Accueil</a>
-                    <a class="list-group-item list-group-item-action active" href="creation" role="tab"
-                        aria-controls="liste-creation">Créer un musicien</a>
-                    <a class="list-group-item list-group-item-action" href="personnages-crees" role="tab"
-                        aria-controls="liste-personnages-crees">Musiciens créés</a>
-                    <a class="list-group-item list-group-item-action" href="personnage-par-defaut" role="tab"
-                        aria-controls="list-personnage-par-defaut">Musicien par défaut</a>
+    <main class="container-fluid row" id="contenu">
+        <nav aria-labelledby="menu-principal" class="col-md-2 list-group" id="list-tab" role="tablist">
+            <h2 id="menu-principal" class="visually-hidden">Menu principal</h2>
+            {% if titre_page == "Création" %}
+            <a class="list-group-item list-group-item-action" href="accueil" role="tab"
+                aria-controls="liste-accueil">Accueil</a>
+            <a class="list-group-item list-group-item-action active" href="creation" role="tab"
+                aria-controls="liste-creation">Créer un musicien</a>
+            <a class="list-group-item list-group-item-action" href="personnages-crees" role="tab"
+                aria-controls="liste-personnages-crees">Musiciens créés</a>
+            <a class="list-group-item list-group-item-action" href="personnage-par-defaut" role="tab"
+                aria-controls="list-personnage-par-defaut">Musicien par défaut</a>
 
-                    {% elif page_active == "personnages_crees" %}
-                    <a class="list-group-item list-group-item-action" href="accueil" role="tab"
-                        aria-controls="liste-accueil">Accueil</a>
-                    <a class="list-group-item list-group-item-action" href="creation" role="tab"
-                        aria-controls="liste-creation">Créer un musicien</a>
-                    <a class="list-group-item list-group-item-action active" href="personnages-crees" role="tab"
-                        aria-controls="liste-personnages-crees">Musiciens créés</a>
-                    <a class="list-group-item list-group-item-action" href="personnage-par-defaut" role="tab"
-                        aria-controls="list-personnage-par-defaut">Musicien par défaut</a>
+            {% elif titre_page == "Musiciens créés" %}
+            <a class="list-group-item list-group-item-action" href="accueil" role="tab"
+                aria-controls="liste-accueil">Accueil</a>
+            <a class="list-group-item list-group-item-action" href="creation" role="tab"
+                aria-controls="liste-creation">Créer un musicien</a>
+            <a class="list-group-item list-group-item-action active" href="personnages-crees" role="tab"
+                aria-controls="liste-personnages-crees">Musiciens créés</a>
+            <a class="list-group-item list-group-item-action" href="personnage-par-defaut" role="tab"
+                aria-controls="list-personnage-par-defaut">Musicien par défaut</a>
 
-                    {% elif page_active == "personnage_par_defaut" %}
-                    <a class="list-group-item list-group-item-action" href="accueil" role="tab"
-                        aria-controls="liste-accueil">Accueil</a>
-                    <a class="list-group-item list-group-item-action" href="creation" role="tab"
-                        aria-controls="liste-creation">Créer un musicien</a>
-                    <a class="list-group-item list-group-item-action" href="personnages-crees" role="tab"
-                        aria-controls="liste-personnages-crees">Musiciens créés</a>
-                    <a class="list-group-item list-group-item-action active" href="personnage-par-defaut" role="tab"
-                        aria-controls="list-personnage-par-defaut">Musicien par défaut</a>
+            {% elif titre_page == "Musicien par défaut" %}
+            <a class="list-group-item list-group-item-action" href="accueil" role="tab"
+                aria-controls="liste-accueil">Accueil</a>
+            <a class="list-group-item list-group-item-action" href="creation" role="tab"
+                aria-controls="liste-creation">Créer un musicien</a>
+            <a class="list-group-item list-group-item-action" href="personnages-crees" role="tab"
+                aria-controls="liste-personnages-crees">Musiciens créés</a>
+            <a class="list-group-item list-group-item-action active" href="personnage-par-defaut" role="tab"
+                aria-controls="list-personnage-par-defaut">Musicien par défaut</a>
 
-                    {% else %}
-                    <a class="list-group-item list-group-item-action active" href="accueil" role="tab"
-                        aria-controls="liste-accueil">Accueil</a>
-                    <a class="list-group-item list-group-item-action" href="creation" role="tab"
-                        aria-controls="liste-creation">Créer un musicien</a>
-                    <a class="list-group-item list-group-item-action" href="personnages-crees" role="tab"
-                        aria-controls="liste-personnages-crees">Musiciens créés</a>
-                    <a class="list-group-item list-group-item-action" href="personnage-par-defaut" role="tab"
-                        aria-controls="list-personnage-par-defaut">Musicien par défaut</a>
+            {% else %}
+            <a class="list-group-item list-group-item-action active" href="accueil" role="tab"
+                aria-controls="liste-accueil">Accueil</a>
+            <a class="list-group-item list-group-item-action" href="creation" role="tab"
+                aria-controls="liste-creation">Créer un musicien</a>
+            <a class="list-group-item list-group-item-action" href="personnages-crees" role="tab"
+                aria-controls="liste-personnages-crees">Musiciens créés</a>
+            <a class="list-group-item list-group-item-action" href="personnage-par-defaut" role="tab"
+                aria-controls="list-personnage-par-defaut">Musicien par défaut</a>
 
-                    {% endif %}
-                </nav>
-            </section>
-            {% block contenu %} {% endblock %}
+            {% endif %}
+        </nav>
+        {% block contenu %} {% endblock %}
     </main>
     <footer>
         <div class="container-fluid py-3 my-4">
