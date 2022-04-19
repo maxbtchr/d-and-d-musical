@@ -1,1 +1,66 @@
+$primary: #1E1E1E;
+$secondary: #F5F5F5;
+$breadcrumb-divider: quote("|");
+$breadcrumb-divider-color: $secondary;
+
+/* ---------------------------- */
+/*           Breadcrumbs        */
+/* ---------------------------- */
+
+$breadcrumb-active-color: #FF6600;
+
+
+/* ---------------------------- */
+/*           FORM-RANGE         */
+/* ---------------------------- */
+
+$form-range-track-bg: $secondary;
+$form-range-thumb-bg: $secondary;           
+
+@import url("https://use.typekit.net/hgm4chp.css");
 @import '../../node_modules/bootstrap/scss/bootstrap.scss';
+@import '../../node_modules/bootstrap-icons/font/bootstrap-icons.scss';
+
+
+/* ---------------------------- */
+/*        PAGE CREATION         */
+/* ---------------------------- */
+
+body {
+    font-family: neuzeit-grotesk, sans-serif;
+    font-weight: 300;
+    font-style: normal;
+
+    background-color: $primary;
+    color: $secondary;
+}
+
+h1 {
+    font-family: odile, serif;
+}
+
+h2{
+    text-transform: uppercase;
+}
+
+h3 {
+    text-transform: uppercase;
+}
+
+.avatar-img-div {
+    width: 10rem;
+    height: 10rem; 
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.avatar-img {
+    width: 100%;
+    
+}
+
+section {
+    .avatar-img-div{
+        margin-top: 2rem;
+    }
+}
