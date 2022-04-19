@@ -1,11 +1,12 @@
 {% extends 'layout.html' %} {% block contenu %}
-<div class="col-lg-6 col-md-10">
+<section class="col-lg-6 col-md-10">
     <div class="alert alert-primary text-center" role="alerte">
         Ceci est le musicien par défaut. Crééz un musicien personnalisé à la page <a href="creation">Création de
             musicien</a> !
     </div>
-    <table class="table table-hover table table-secondary table-striped caption-top">
-        <caption class="text-center h5">Personnage par défaut</caption>
+    <h2 class="h4" id="titre-musicien-par-defaut">Musicien par défaut</h2>
+    <table class="table table-hover table table-secondary table-striped caption-top" aria-labelledby="titre-musicien-par-defaut" title="Caractéristiques du musicien par défaut">
+        <caption class="visually-hidden">Musicien par défaut</caption>
         <thead>
             <tr>
                 <th scope="col">Caractéristiques</th>
@@ -56,6 +57,6 @@
         </tbody>
     </table>
 
-</div>
+</section>
 
 {% endblock %}
