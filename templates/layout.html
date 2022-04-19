@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,15 +8,169 @@
     <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
     <title>{{titre_page}}</title>
 </head>
+
 <body>
     <header>
-
+        <a href="#contenu"></a>
+        <h1 class="visually-hidden">
+            <a href="">Dongeons et dragons: Rock Band</a>
+        </h1>
+        <nav arialabelledby="menu-secondaire" class="navbar navbar-expand-sm navbar-light bg-light">
+            <h2 id="menu-secondaire" class="visually-hidden">Menu secondaire</h2>
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Navbar</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#contenuNavigation" aria-controls="contenuNavigation"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="contenuNavigation">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="#">Connexion</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Partager</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Recherche" aria-label="Recherche">
+                        <button type="button" class="btn btn-outline-success" data-bs-toggle="modal"
+                            data-bs-target="#rechercheModal"><i class="bi bi-search"></i></button>
+                        <div class="modal fade" id="rechercheModal" tabindex="-1" aria-labelledby="rechercheModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="rechercheModalLabel">Recherche</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="list-group">
+                                            <p class="fs-4">Cherchez-vous un de ces liens ?</p>
+                                            <a href="accueil" class="list-group-item list-group-item-action">Accueil</a>
+                                            <a href="creation" class="list-group-item list-group-item-action">Création
+                                                de musiciens</a>
+                                            <a href="personnages-crees"
+                                                class="list-group-item list-group-item-action">Musiciens créés</a>
+                                            <a href="personnage-par-defaut"
+                                                class="list-group-item list-group-item-action">Musicien par défaut</a>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Fermer</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </nav>
+        {% if page_active == "creation" %}
+        <nav aria-label="fil-d-ariane">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Accueil</a></li>
+                <li class="breadcrumb-item"><a href="#">Musiciens</a></li>
+                <li class="breadcrumb-item active" aria-current="page-actuelle">Créer un musicien</li>
+            </ol>
+        </nav>
+        {% elif page_active == "personnages_crees" %}
+        <nav aria-label="fil-d-ariane">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Accueil</a></li>
+                <li class="breadcrumb-item"><a href="#">Musiciens</a></li>
+                <li class="breadcrumb-item active" aria-current="page-actuelle">Musiciens créés</li>
+            </ol>
+        </nav>
+        {% elif page_active == "personnage_par_defaut" %}
+        <nav aria-label="fil-d-ariane">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Accueil</a></li>
+                <li class="breadcrumb-item"><a href="#">Musiciens</a></li>
+                <li class="breadcrumb-item active" aria-current="page-actuelle">Musicien par défaut</li>
+            </ol>
+        </nav>
+        {% endif %}
     </header>
-    <main>
-        {% block contenu %} {% endblock %}
+    <main class="container-fluid" id="contenu">
+        <div class="row">
+            <section class="col-lg-2">
+                <nav aria-labelledby="menu-principal" class="list-group" id="list-tab" role="tablist">
+                    <h2 id="menu-principal" class="visually-hidden">Menu principal</h2>
+                    {% if page_active == "creation" %}
+                    <a class="list-group-item list-group-item-action" href="accueil" role="tab"
+                        aria-controls="liste-accueil">Accueil</a>
+                    <a class="list-group-item list-group-item-action active" href="creation" role="tab"
+                        aria-controls="liste-creation">Créer un musicien</a>
+                    <a class="list-group-item list-group-item-action" href="personnages-crees" role="tab"
+                        aria-controls="liste-personnages-crees">Musiciens créés</a>
+                    <a class="list-group-item list-group-item-action" href="personnage-par-defaut" role="tab"
+                        aria-controls="list-personnage-par-defaut">Musicien par défaut</a>
+
+                    {% elif page_active == "personnages_crees" %}
+                    <a class="list-group-item list-group-item-action" href="accueil" role="tab"
+                        aria-controls="liste-accueil">Accueil</a>
+                    <a class="list-group-item list-group-item-action" href="creation" role="tab"
+                        aria-controls="liste-creation">Créer un musicien</a>
+                    <a class="list-group-item list-group-item-action active" href="personnages-crees" role="tab"
+                        aria-controls="liste-personnages-crees">Musiciens créés</a>
+                    <a class="list-group-item list-group-item-action" href="personnage-par-defaut" role="tab"
+                        aria-controls="list-personnage-par-defaut">Musicien par défaut</a>
+
+                    {% elif page_active == "personnage_par_defaut" %}
+                    <a class="list-group-item list-group-item-action" href="accueil" role="tab"
+                        aria-controls="liste-accueil">Accueil</a>
+                    <a class="list-group-item list-group-item-action" href="creation" role="tab"
+                        aria-controls="liste-creation">Créer un musicien</a>
+                    <a class="list-group-item list-group-item-action" href="personnages-crees" role="tab"
+                        aria-controls="liste-personnages-crees">Musiciens créés</a>
+                    <a class="list-group-item list-group-item-action active" href="personnage-par-defaut" role="tab"
+                        aria-controls="list-personnage-par-defaut">Musicien par défaut</a>
+
+                    {% else %}
+                    <a class="list-group-item list-group-item-action active" href="accueil" role="tab"
+                        aria-controls="liste-accueil">Accueil</a>
+                    <a class="list-group-item list-group-item-action" href="creation" role="tab"
+                        aria-controls="liste-creation">Créer un musicien</a>
+                    <a class="list-group-item list-group-item-action" href="personnages-crees" role="tab"
+                        aria-controls="liste-personnages-crees">Musiciens créés</a>
+                    <a class="list-group-item list-group-item-action" href="personnage-par-defaut" role="tab"
+                        aria-controls="list-personnage-par-defaut">Musicien par défaut</a>
+
+                    {% endif %}
+                </nav>
+            </section>
+            {% block contenu %} {% endblock %}
     </main>
     <footer>
-        
+        <div class="container-fluid py-3 my-4">
+            <nav>
+                <ul class="row nav justify-content-center pb-3 mb-3">
+                    <li class="col-md-2 nav-item"><a href="#" class="nav-link text-center">Contactez-nous</a></li>
+                    <li class="col-md-2 nav-item"><a href="#" class="nav-link text-center">Conditions d'utilisation</a>
+                    </li>
+                    <li class="col-md-2 nav-item"><a href="#" class="nav-link text-center">Politique de
+                            confidentialité</a>
+                    </li>
+                </ul>
+            </nav>
+            <figure class="text-center">
+                <blockquote class="blockquote">
+                    <p>Lorsque nous avons débuté, nous ne pensions pas devenir un groupe mondial. C'est simplement
+                        arrivé.</p>
+                </blockquote>
+                <figcaption class="blockquote-footer">
+                    Steve Harris, bassiste de <cite title="nom-du-groupe">Iron Maiden</cite>
+                </figcaption>
+            </figure>
+        </div>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+    </script>
 </body>
+
 </html>

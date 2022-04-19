@@ -1,0 +1,62 @@
+{% extends 'layout.html' %} {% block contenu %}
+<section class="col-lg-6 col-md-10">
+    <div class="alert alert-primary text-center" role="alerte">
+        Ceci est le musicien par défaut. Crééz un musicien personnalisé à la page <a href="creation">Création de
+            musicien</a> !
+    </div>
+    <h2 class="h4" id="titre-musicien-par-defaut">Musicien par défaut</h2>
+    <table class="table table-hover table table-secondary table-striped caption-top" aria-labelledby="titre-musicien-par-defaut" title="Caractéristiques du musicien par défaut">
+        <caption class="visually-hidden">Musicien par défaut</caption>
+        <thead>
+            <tr>
+                <th scope="col">Caractéristiques</th>
+                <th scope="col">Données et aptitudes</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">Nom</th>
+                <td>Steve Harris</td>
+            </tr>
+            <tr>
+                <th scope="row">Instrument</th>
+                <td>Basse</td>
+            </tr>
+            <tr>
+                <th scope="row">Marque d'instrument préférée</th>
+                <td>Fender</td>
+            </tr>
+            <tr>
+                <th scope="row">Technique</th>
+                <td>8</td>
+            </tr>
+            <tr>
+                <th scope="row">Sens du rythme</th>
+                <td>7</td>
+            </tr>
+            <tr>
+                <th scope="row">Émotion musicale</th>
+                <td>9</td>
+            </tr>
+            <tr>
+                <th scope="row">Composition</th>
+                <td>10</td>
+            </tr>
+            <tr>
+                <th scope="row">Improvisation</th>
+                <td>8</td>
+            </tr>
+            <tr>
+                <th scope="row">Ton de l'instrument</th>
+                <td>5</td>
+            </tr>
+            <tr>
+                <th scope="row">Attitude</th>
+                <td>9</td>
+            </tr>
+        </tbody>
+    </table>
+
+</section>
+
+{% endblock %}

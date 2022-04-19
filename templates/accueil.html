@@ -1,0 +1,52 @@
+{% extends 'layout.html' %}
+{%block contenu %}
+<section class="col-lg-5 bg-dark">
+    <div id="carrouselAccueil" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="{{url_for('static', filename='img/bassist-1.jpg')}}" class="img-fluid"
+                    alt="image-de-bassiste">
+            </div>
+            <div class="carousel-item">
+                <img src="{{url_for('static', filename='img/guitarist-2.jpg')}}" class="img-fluid" alt="image-de-guitariste">
+            </div>
+            <div class="carousel-item">
+                <img src="{{url_for('static', filename='img/singer-2.jpg')}}" class="img-fluid" alt="image-de-chanteuse">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carrouselAccueil" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carrouselAccueil" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</section>
+<section class="col-lg-5 bg-dark">
+    <div class="card">
+        <div class="card-body">
+            <h2 class="h4">Dongeon et Dragon : Rock Band</h1>
+
+            <p>La série Rock Band est de retour, cette fois sous l’effigie du célèbre jeu Dongeons et Dragons ! Comme
+                dans le jeu traditionnel de Donjons et Dragons, vous et vos amis devez créer vos personnages, mais cette
+                fois-ci, ces personnages seront des musiciens qui devront former un groupe de musique et ainsi conquérir
+                le monde musical !</p>
+
+            <p>Lors de la création de votre personnage, choisissez son instrument et ses attributs qui lui permettront
+                de se démarquer et ainsi compléter une formation musicale. Vous devrez faire des choix ! Est-il
+                guitariste, bassiste, chanteur ou batteur ? A-t-il une créativité qui lui permettra de proposer des
+                idées de composition ou d’arrangement ? Votre guitariste est-il plutôt rythmique ou soliste ? Votre
+                chanteur est-il axé vers la technique ou le feeling ? Votre batteur est-il un business man dans la même
+                veine que Lars Ulrich, et plutôt mauvais techniquement ? À vous de choisir !</p>
+
+            <p>Rock Band permet aux joueurs de créer leurs propres groupes de rock virtuels en donnant la possibilité de
+                jouer à 4 joueurs en simultané grâce à l'utilisation de périphériques inspirés de réels instruments de
+                musique, vendus avec le jeu ou indépendamment. L'édition spéciale comprend le jeu en lui-même ainsi
+                qu'une batterie, une guitare et un micro. Ces périphériques permettent de simuler l'action d'un
+                véritable groupe de rock en jouant les notes qui défilent à l'écran.</p>
+        </div>
+    </div>
+</section>
+{% endblock %}
