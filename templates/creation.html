@@ -1,17 +1,119 @@
 {% extends 'layout.html' %} {% block contenu %}
 
 <div class="container-fluid">
+    <h1>Créer Musicien</h1>
+  <form
+    action="https://philippefleury.com/backend.php "
+    method="POST"
+    class="row"
+  >
+    <section class="col-6">
+        <h2>Information Générale</h2>
+      <div class="mb-3">
+        <label for="Nom" class="form-label">Nom: </label>
+        <input
+          type="text"
+          class="form-control"
+          id="nom-page-creation"
+          placeholder="Votre Nom"
+        />
+      </div>
+      <h3>Marque d'instrument préférée</h3>
+      <select class="form-select" aria-label="Marque d'instrument préférée">
+        <option selected>Marque</option>
+        <option value="fender">Fender</option>
+        <option value="gretsch">Gretsch</option>
+        <option value="gibson">Gibson</option>
+      </select>
+      <h3>Instrument</h3>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="radio"
+          name="voix"
+          id="voix"
+        />
+        <label class="form-check-label" for="instrument"> Voix </label>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="radio"
+          name="guitare"
+          id="guitare"
+        />
+        <label class="form-check-label" for="instrument"> Guitare </label>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="radio"
+          name="basse"
+          id="basse"
+        />
+        <label class="form-check-label" for="instrument"> Basse </label>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="radio"
+          name="drums"
+          id="drums"
+        />
+        <label class="form-check-label" for="instrument"> Drums </label>
+      </div>
 
-    <form action="https://philippefleury.com/backend.php " method="POST" class="row">
-      <section class="col-6">
-        <div class="mb-3">
-            <label for="Nom" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-          </div>
-      </section>
-      <section class="col-6">2</section>
-    </form>
-  
+      <h3>Pouvoirs Musicaux</h3>
+      <div>
+        <label for="technique" class="form-label">Technique</label>
+        <input
+          type="range"
+          class="form-range"
+          min="0"
+          max="5"
+          id="technique"
+        />
+        <label for="feeling" class="form-label">Feeling</label>
+        <input
+          type="range"
+          class="form-range"
+          min="0"
+          max="5"
+          id="Feeling"
+        />
+        <label for="time" class="form-label">Time</label>
+        <input
+          type="range"
+          class="form-range"
+          min="0"
+          max="5"
+          id="time"
+        />
+        <label for="solos" class="form-label">Solos</label>
+        <input
+          type="range"
+          class="form-range"
+          min="0"
+          max="5"
+          id="solos"
+        />
+        <label for="attitude" class="form-label">Attitude</label>
+        <input
+          type="range"
+          class="form-range"
+          min="0"
+          max="5"
+          id="attitude"
+        />
+      </div>
+      <button type="submit" class="btn btn-outline-primary">Envoyer</button>
+      <button type="reset" class="btn btn-outline-primary">Réinitialiser</button>
+      <button type="button" class="btn btn-outline-primary">Aléatoire</button>
+    </section>
+    <section class="col-6">
+        <h2>Avatar</h2>
+    </section>
+  </form>
 </div>
 
 {% endblock %}
