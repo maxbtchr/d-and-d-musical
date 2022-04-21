@@ -11,59 +11,61 @@
 
 <body>
     <header>
-        <a href="#contenu" class="visually-hidden">Aller directement au contenu de la page</a>
+        <a href="#contenu" class="visually-hidden-focusable">Aller directement au contenu principal</a>
         <h1 class="visually-hidden">
             <a href="http://127.0.0.1:5000/">Donjons et dragons: Rock Band</a>
         </h1>
-        <nav aria-label="menu-secondaire" class="navbar navbar-expand-md navbar-light bg-light">
-            <h2 id="menu-secondaire" class="visually-hidden">Menu secondaire</h2>
+        <nav aria-label="menu secondaire" class="navbar navbar-expand-md navbar-dark bg-primary d-flex">
+            <h2 class="visually-hidden">Menu secondaire</h2>
             <div class="container-fluid">
-                <a href="https://dnd.wizards.com/fr" aria-label="lien vers le site de Donjons et Dragons"><img class="rounded float-start" src="{{url_for('static', filename='img/dd-icone.png')}}" alt="Logo de Donjons et Dragons"></a>
-                <a href="https://www.rockband4.com/" aria-label="len vers le site de Rockband">                <img class="rounded mx-auto d-block" src="{{url_for('static', filename='img/rockband-icone.png')}}" alt="Logo de Rockband"></a>
+                <a href="https://dnd.wizards.com/fr" class="p-1" aria-label="lien vers le site de Donjons et Dragons"><img class="rounded float-start" src="{{url_for('static', filename='img/dd-icone.png')}}" alt="Logo de Donjons et Dragons"></a>
+                <a href="https://www.rockband4.com/" class="p-1" aria-label="lien vers le site de Rockband">                <img class="rounded mx-auto d-block" src="{{url_for('static', filename='img/rockband-icone.png')}}" alt="Logo de Rockband"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#contenuNavigation" aria-controls="contenuNavigation" aria-expanded="false"
-                    aria-label="Toggle navigation">
+                    aria-label="Ouvrir menu de navigation secondaire">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="contenuNavigation">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <div class="collapse navbar-collapse" aria-label="Menu secondaire" id="contenuNavigation">
+                    <ul class="navbar-nav me-auto nav-pills p-1">
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="#">Connexion</a>
+                            <a class="nav-link text-white p-2" aria-current="page" href="#">Connexion</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Partager</a>
+                            <a class="nav-link text-white p-2" href="#">Partager</a>
                         </li>
                     </ul>
                     <form class="d-flex">
-                        <input class="form-control me-2" type="search" placeholder="Recherche" aria-label="Recherche">
-                        <button type="button" class="btn btn-outline-success" data-bs-toggle="modal"
+                        <input class="form-control me-2" type="search" placeholder="Recherche" aria-label="Rechercher">
+                        <button type="button" aria-label="Lancer recherche" class="btn btn-outline-light" data-bs-toggle="modal"
                             data-bs-target="#rechercheModal"><svg xmlns="http://www.w3.org/2000/svg" width="16"
                                 height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
                                 <path
                                     d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
                             </svg></button>
                         <div class="modal fade" id="rechercheModal" tabindex="-1">
-                            <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-dialog modal-dialog-centered" aria-label="Résultats de la recherche">
                                 <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="rechercheModalLabel">Recherche</h5>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                            aria-label="Fermer"></button>
+                                    <div class="modal-header bg-primary">
+                                        <h5 class="modal-title text-white" id="rechercheModalLabel">Recherche</h5>
+                                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                                            aria-label="Fermer résultats de la recherche"></button>
                                     </div>
                                     <div class="modal-body">
                                         <div class="list-group">
-                                            <p class="fs-4">Cherchez-vous un de ces liens ?</p>
-                                            <a href="accueil" class="list-group-item list-group-item-action">Accueil</a>
-                                            <a href="creation" class="list-group-item list-group-item-action">Création
-                                                de musiciens</a>
-                                            <a href="personnages-crees"
-                                                class="list-group-item list-group-item-action">Musiciens créés</a>
-                                            <a href="personnage-par-defaut"
-                                                class="list-group-item list-group-item-action">Musicien par défaut</a>
+                                            <h4 class="fs-4">Cherchez-vous un de ces liens ?</h3>
+                                                <div class="border rounded">
+                                                    <a href="accueil" class="list-group-item list-group-item-action">Accueil</a>
+                                                    <a href="creation" class="list-group-item list-group-item-action">Création
+                                                        de musiciens</a>
+                                                    <a href="personnages-crees"
+                                                        class="list-group-item list-group-item-action">Musiciens créés</a>
+                                                    <a href="personnage-par-defaut"
+                                                        class="list-group-item list-group-item-action">Musicien par défaut</a>
+                                                </div>
                                         </div>
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary"
+                                        <button type="button" class="btn btn-info text-white" aria-label="Fermer résultats de la recherche"
                                             data-bs-dismiss="modal">Fermer</button>
                                     </div>
                                 </div>
@@ -73,25 +75,17 @@
                 </div>
             </div>
         </nav>
-        {% if titre_page == "Création" %}
-        <nav class="container-fluid" aria-label="fil-dariane">
+        <nav class="container-fluid mt-3" aria-label="fil-dariane">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="accueil" class="text-secondary">Accueil</a></li>
-                <li class="breadcrumb-item"><a href="personnages-crees" class="text-secondary">Musiciens</a></li>
+                {% if titre_page == "Création" %}
+                <li class="breadcrumb-item"><a href="accueil">Accueil</a></li>
+                <li class="breadcrumb-item"><a href="personnages-crees">Musiciens</a></li>
                 <li class="breadcrumb-item active" aria-current="page-actuelle">Créer un musicien</li>
-            </ol>
-        </nav>
-        {% elif titre_page == "Musiciens créés" %}
-        <nav class="container-fluid" aria-label="fil-dariane">
-            <ol class="breadcrumb">
+                {% elif titre_page == "Musiciens créés" %}
                 <li class="breadcrumb-item"><a href="accueil">Accueil</a></li>
                 <li class="breadcrumb-item"><a href="personnages-crees">Musiciens</a></li>
                 <li class="breadcrumb-item active" aria-current="page-actuelle">Musiciens créés</li>
-            </ol>
-        </nav>
-        {% elif titre_page == "Musicien par défaut" %}
-        <nav class="container-fluid" aria-label="fil-dariane">
-            <ol class="breadcrumb">
+                {% elif titre_page == "Musicien par défaut" %}
                 <li class="breadcrumb-item"><a href="accueil">Accueil</a></li>
                 <li class="breadcrumb-item"><a href="personnages-crees">Musiciens</a></li>
                 <li class="breadcrumb-item active" aria-current="page-actuelle">Musicien par défaut</li>
@@ -99,57 +93,73 @@
         </nav>
         {% endif %}
     </header>
-    <main class="container-fluid row" id="contenu">
-        <nav aria-label="menu-principal" class="col-md-2 list-group" id="list-tab" role="tablist">
-            <h2 id="menu-principal" class="visually-hidden">Menu principal</h2>
-            {% if titre_page == "Création" %}
-            <a class="list-group-item list-group-item-action" href="accueil" role="tab"
-                aria-controls="liste-accueil">Accueil</a>
-            <a class="list-group-item list-group-item-action active" href="creation" role="tab"
-                aria-controls="liste-creation">Créer un musicien</a>
-            <a class="list-group-item list-group-item-action" href="personnages-crees" role="tab"
-                aria-controls="liste-personnages-crees">Musiciens créés</a>
-            <a class="list-group-item list-group-item-action" href="personnage-par-defaut" role="tab"
-                aria-controls="list-personnage-par-defaut">Musicien par défaut</a>
-
-            {% elif titre_page == "Musiciens créés" %}
-            <a class="list-group-item list-group-item-action" href="accueil" role="tab"
-                aria-controls="liste-accueil">Accueil</a>
-            <a class="list-group-item list-group-item-action" href="creation" role="tab"
-                aria-controls="liste-creation">Créer un musicien</a>
-            <a class="list-group-item list-group-item-action active" href="personnages-crees" role="tab"
-                aria-controls="liste-personnages-crees">Musiciens créés</a>
-            <a class="list-group-item list-group-item-action" href="personnage-par-defaut" role="tab"
-                aria-controls="list-personnage-par-defaut">Musicien par défaut</a>
-
-            {% elif titre_page == "Musicien par défaut" %}
-            <a class="list-group-item list-group-item-action" href="accueil" role="tab"
-                aria-controls="liste-accueil">Accueil</a>
-            <a class="list-group-item list-group-item-action" href="creation" role="tab"
-                aria-controls="liste-creation">Créer un musicien</a>
-            <a class="list-group-item list-group-item-action" href="personnages-crees" role="tab"
-                aria-controls="liste-personnages-crees">Musiciens créés</a>
-            <a class="list-group-item list-group-item-action active" href="personnage-par-defaut" role="tab"
-                aria-controls="list-personnage-par-defaut">Musicien par défaut</a>
-
-            {% else %}
-            <a class="list-group-item list-group-item-action active" href="accueil" role="tab"
-                aria-controls="liste-accueil">Accueil</a>
-            <a class="list-group-item list-group-item-action" href="creation" role="tab"
-                aria-controls="liste-creation">Créer un musicien</a>
-            <a class="list-group-item list-group-item-action" href="personnages-crees" role="tab"
-                aria-controls="liste-personnages-crees">Musiciens créés</a>
-            <a class="list-group-item list-group-item-action" href="personnage-par-defaut" role="tab"
-                aria-controls="list-personnage-par-defaut">Musicien par défaut</a>
-
-            {% endif %}
-        </nav>
-        {% block contenu %} {% endblock %}
+    <main id="contenu">
+        <div class="container-fluid row my-3 pe-0">
+            <nav aria-label="Menu principal" class="col-md-2 list-group mb-3" id="list-tab">
+                <h2 class="visually-hidden">Menu principal</h2>
+                <ul class="main-nav-ul">
+                {% if titre_page == "Création" %}
+                <li class="nav-item">
+                    <a class="main-nav-link" aria-current="page" href="accueil">Accueil</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="main-nav-link active"href="creation">Créer un musicien</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="main-nav-link" href="personnages-crees">Musiciens créés</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="main-nav-link" href="personnage-par-defaut">Musicien par défaut</a>
+                  </li>
+                {% elif titre_page == "Musiciens créés" %}
+                <li class="nav-item">
+                    <a class="main-nav-link" aria-current="page" href="accueil">Accueil</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="main-nav-link"href="creation">Créer un musicien</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="main-nav-link active"href="personnages-crees">Musiciens créés</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="main-nav-link" href="personnage-par-defaut">Musicien par défaut</a>
+                  </li>
+                {% elif titre_page == "Musicien par défaut" %}
+                <li class="nav-item">
+                    <a class="main-nav-link" aria-current="page" href="accueil">Accueil</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="main-nav-link"href="creation">Créer un musicien</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="main-nav-link"href="personnages-crees">Musiciens créés</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="main-nav-link active" href="personnage-par-defaut">Musicien par défaut</a>
+                  </li>
+                {% else %}
+                <li class="nav-item">
+                    <a class="main-nav-link active" aria-current="page" href="accueil">Accueil</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="main-nav-link"href="creation">Créer un musicien</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="main-nav-link"href="personnages-crees">Musiciens créés</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="main-nav-link" href="personnage-par-defaut">Musicien par défaut</a>
+                  </li>
+                {% endif %}
+            </ul>
+            </nav>
+            {% block contenu %} {% endblock %}
+        </div>
     </main>
     <footer>
-        <div class="container-fluid py-3 my-4">
-            <nav>
-                <ul class="row nav justify-content-center pb-3 mb-3">
+        <div class="container-fluid py-3 my-3">
+            <nav aria-label="Navigation pied de page">
+                <ul class="row nav nav-pills justify-content-center pb-3 mb-3">
                     <li class="col-md-2 nav-item"><a href="#" class="nav-link text-center">Contactez-nous</a></li>
                     <li class="col-md-2 nav-item"><a href="#" class="nav-link text-center">Conditions d'utilisation</a>
                     </li>

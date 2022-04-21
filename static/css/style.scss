@@ -1,14 +1,8 @@
-$primary: #1E1E1E;
-$secondary: #F5F5F5;
+$primary: #022E64;
+$secondary: #EC2127;
+$info: #368FFC;
 $breadcrumb-divider: quote("|");
-$breadcrumb-divider-color: $secondary;
-
-/* ---------------------------- */
-/*           Breadcrumbs        */
-/* ---------------------------- */
-
-$breadcrumb-active-color: #FF6600;
-
+$breadcrumb-divider-color: $primary;
 
 /* ---------------------------- */
 /*           FORM-RANGE         */
@@ -21,37 +15,88 @@ $form-range-thumb-bg: $secondary;
 @import '../../node_modules/bootstrap/scss/bootstrap.scss';
 @import '../../node_modules/bootstrap-icons/font/bootstrap-icons.scss';
 
+
 /* ---------------------------- */
 /*            LAYOUT            */
-/* ---------------------------- */
-
-
-
-
-/* ---------------------------- */
-/*        PAGE CREATION         */
 /* ---------------------------- */
 
 body {
     font-family: neuzeit-grotesk, sans-serif;
     font-weight: 300;
     font-style: normal;
-
-    background-color: $primary;
-    color: $secondary;
+    height: 100vh;
 }
 
 h1 {
     font-family: odile, serif;
 }
 
-h2{
+h2, h3{
     text-transform: uppercase;
 }
 
-h3 {
-    text-transform: uppercase;
+@mixin transition {
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
 }
+
+@mixin survol-liens($couleur1, $couleur2){
+    background-color: $couleur1;
+    color: $couleur2;
+}
+
+.nav-link{
+    color: unset;
+    @include transition;
+    &:hover{
+        @include survol-liens($info, white)
+    }
+}
+
+.main-nav-ul{
+    @extend .nav;
+    @extend .nav-pills;
+    @extend .rounded;
+    @extend .flex-column;
+    @extend .border;
+    @extend .border-info;
+    overflow: hidden
+}
+
+.main-nav-link, .list-group-item-action{
+    @extend .nav-link;
+    border-radius: 0rem !important;
+    &:hover{
+        @include survol-liens($secondary, white)
+    }
+}
+
+div [class="border rounded"]{
+    overflow: hidden;
+}
+
+/* ---------------------------- */
+/*        PAGE ACCUEIL          */
+/* ---------------------------- */
+
+.carousel{
+    border-radius: 0.25rem;
+    overflow: hidden;
+}
+
+.texte-accueil-conteneur{
+    @extend .card;
+    border: none;
+}
+
+.card{
+    background-color: unset;
+}
+
+
+/* ---------------------------- */
+/*        PAGE CREATION         */
+/* ---------------------------- */
+
 
 .avatar-img-div {
     width: 10rem;
@@ -62,11 +107,19 @@ h3 {
 
 .avatar-img {
     width: 100%;
-    
 }
 
 section {
     .avatar-img-div{
         margin-top: 2rem;
     }
+}
+
+
+/* ---------------------------- */
+/*  PAGE MUSICIEN PAR DEFAUT    */
+/* ---------------------------- */
+
+.table > :not(:first-child) {
+    border-top: 0px;
 }
