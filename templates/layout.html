@@ -48,12 +48,12 @@
                                 <div class="modal-content">
                                     <div class="modal-header bg-primary">
                                         <h5 class="modal-title text-white" id="rechercheModalLabel">Recherche</h5>
-                                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                                        <button type="submit" class="btn-close btn-close-white" data-bs-dismiss="modal"
                                             aria-label="Fermer résultats de la recherche"></button>
                                     </div>
                                     <div class="modal-body">
                                         <div class="list-group">
-                                            <h4 class="fs-4">Cherchez-vous un de ces liens ?</h3>
+                                            <h4 class="fs-4">Cherchez-vous un de ces liens ?</h4>
                                                 <div class="border rounded">
                                                     <a href="accueil" class="list-group-item list-group-item-action">Accueil</a>
                                                     <a href="creation" class="list-group-item list-group-item-action">Création
@@ -81,15 +81,15 @@
                 {% if titre_page == "Création" %}
                 <li class="breadcrumb-item"><a href="accueil">Accueil</a></li>
                 <li class="breadcrumb-item"><a href="personnages-crees">Musiciens</a></li>
-                <li class="breadcrumb-item active" aria-current="page-actuelle">Créer un musicien</li>
+                <li class="breadcrumb-item active">Créer un musicien</li>
                 {% elif titre_page == "Musiciens créés" %}
                 <li class="breadcrumb-item"><a href="accueil">Accueil</a></li>
                 <li class="breadcrumb-item"><a href="personnages-crees">Musiciens</a></li>
-                <li class="breadcrumb-item active" aria-current="page-actuelle">Musiciens créés</li>
+                <li class="breadcrumb-item active">Musiciens créés</li>
                 {% elif titre_page == "Musicien par défaut" %}
                 <li class="breadcrumb-item"><a href="accueil">Accueil</a></li>
                 <li class="breadcrumb-item"><a href="personnages-crees">Musiciens</a></li>
-                <li class="breadcrumb-item active" aria-current="page-actuelle">Musicien par défaut</li>
+                <li class="breadcrumb-item active">Musicien par défaut</li>
             </ol>
         </nav>
         {% endif %}
