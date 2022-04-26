@@ -3,67 +3,93 @@
 <div class="container-fluid col-md-10">
   <h1>Musiciens Crées</h1>
   <div class="card-container row card-animation">
-    <div class="card" style="width: 15rem">
-      <img
-        src="{{url_for('static', filename='img/singer-cree.jpg')}}"
-        class="img-fluid"
-        alt="Chanteur déjà crée"
-      />
-      <div class="card-body">
-        <h5 class="card-title">Sammy</h5>
-        <p class="card-text">
-            Chanteur vetran, Sammy a joué dans le monde entier.
-        </p>
-        <a href="#" class="btn btn-primary stretched-link">Voir Plus</a>
+    <div class="card-group col-lg-6 col-md-12">
+      <div class="card" style="width: 15rem">
+        <img
+          src="{{url_for('static', filename='img/singer-cree.png')}}"
+          class="img-fluid"
+          alt="Chanteur déjà crée"
+        />
+        <div class="card-body">
+          <h2 class="h5 card-title">Sammy</h2>
+          <p class="card-text">
+            Chanteur vétéran, Sammy s'est produit dans le monde entier avec
+            divers groupes.
+          </p>
+          <a
+            href="#"
+            class="btn btn-primary stretched-link"
+            aria-label="Voir plus"
+            >Voir Plus</a
+          >
+        </div>
+      </div>
+      <div class="card" style="width: 15rem">
+        <img
+          src="{{url_for('static', filename='img/guitarist-cree.png')}}"
+          class="img-fluid"
+          alt="Guitariste déjà crée"
+        />
+
+        <div class="card-body">
+          <h2 class="h5 card-title">Joe</h2>
+          <p class="card-text">
+            Joe a partagé la scène avec des artistes tels que D'Angelo et The
+            Roots.
+          </p>
+          <a
+            href="#"
+            class="btn btn-primary stretched-link"
+            aria-label="Voir plus"
+            >Voir Plus</a
+          >
+        </div>
       </div>
     </div>
-    <div class="card" style="width: 15rem">
-      <img
-        src="{{url_for('static', filename='img/guitarist-cree.jpg')}}"
-        class="img-fluid"
-        alt="Guitariste déjà crée"
-      />
+    <div class="card-group col-lg-6 col-md-12">
+      <div class="card" style="width: 15rem">
+        <img
+          src="{{url_for('static', filename='img/bassist-cree.jpg')}}"
+          class="img-fluid"
+          alt="Bassiste déjà crée"
+        />
 
-      <div class="card-body">
-        <h5 class="card-title">Joe</h5>
-        <p class="card-text">
-            Joe a partagé la scène avec des artistes tels que D'Angelo et The Roots.
-        </p>
-        <a href="#" class="btn btn-primary stretched-link">Voir Plus</a>
-      </div>
-    </div>
-    <div class="card" style="width: 15rem">
-      <img
-        src="{{url_for('static', filename='img/bassist-cree.jpg')}}"
-        class="img-fluid"
-        alt="Bassiste déjà crée"
-      />
-
-      <div class="card-body">
-        <h5 class="card-title">Marcus</h5>
-        <p class="card-text">
+        <div class="card-body">
+          <h2 class="h5 card-title">Marcus</h2>
+          <p class="card-text">
             Marcus a joué avec des légendes telles que Miles Davis.
-        </p>
-        <a href="#" class="btn btn-primary stretched-link">Voir Plus</a>
+          </p>
+          <a
+            href="#"
+            class="btn btn-primary stretched-link"
+            aria-label="Voir plus"
+            >Voir Plus</a
+          >
+        </div>
       </div>
-    </div>
-    <div class="card" style="width: 15rem">
-      <img
-        src="{{url_for('static', filename='img/drummer-cree.jpg')}}"
-        class="img-fluid"
-        alt="Drummer déjà crée"
-      />
+      <div class="card" style="width: 15rem">
+        <img
+          src="{{url_for('static', filename='img/drummer-cree.png')}}"
+          class="img-fluid"
+          alt="Drummer déjà crée"
+        />
 
-      <div class="card-body">
-        <h5 class="card-title">Frank</h5>
-        <p class="card-text">
-            Frank est un nouveau batteur sur la scène qui cherche à acquérir de l'expérience.
-        </p>
-        <a href="#" class="btn btn-primary stretched-link">Voir Plus</a>
+        <div class="card-body">
+          <h2 class="h5 card-title">Frank</h2>
+          <p class="card-text">
+            Frank est un nouveau batteur sur la scène qui cherche à acquérir de
+            l'expérience.
+          </p>
+          <a
+            href="#"
+            class="btn btn-primary stretched-link"
+            aria-label="Voir plus"
+            >Voir Plus</a
+          >
+        </div>
       </div>
     </div>
   </div>
 </div>
-
 
 {% endblock %}
