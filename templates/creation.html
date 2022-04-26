@@ -7,7 +7,7 @@
     method="POST"
     class="row"
   >
-    <fieldset class="col-lg-6 p-5">
+    <fieldset class="col-lg-6 p-5 border">
       <h2 class="text-center mb-5">Information Générale</h2>
       <div class="mb-3">
         <label id="nom" for="Nom" class="form-label">Nom: </label>
@@ -68,49 +68,69 @@
         <input type="range" class="form-range" min="0" max="5" id="attitude" />
       </div>
 
+      <h3 class="h5 mt-5">Couleur d'avatar</h3>
+      <div class="form-check">
+        <label class="form-check-label" for="instrument"> Choisir un couleur </label>
+        <input class="" type="color" name="coleur" id="coleur" aria-label="couleur"/>
+        
+      </div>
+
+      <h3 class="h5 mt-5">Télécharger votre photo</h3>
+      <div class="form-check">
+        <label class="form-check-label" for="instrument">Choisissez une photo ou sélectionnez un avatar par défaut</label>
+        <input class="" type="file" name="photo" id="photo" aria-label="photo"/>
+        <input class="form-check-input" type="radio" name="avatar" id="mon-photo" aria-label="mon-photo"/>
+      </div>
+      
+
     </fieldset>
-    <fieldset class="col-lg-6 p-5">
+    <fieldset class="col-lg-6 p-5 border">
       <h2 class="text-center">Avatar</h2>
-      <div class="">
-        <figure class="avatar-img-div text-center">
+      <div class="text-center">
+        <figure class="avatar-img-div text-center mx-auto">
           <img
             class="img-fluid"
             src="{{url_for('static', filename='img/avatar-bassist.jpg')}}"
             alt=""
           />
           <figcaption>Bassiste</figcaption>
+          <input class="form-check-input" type="radio" name="avatar" id="bassiste" aria-label="bassiste"/>
         </figure>
-        <figure class="avatar-img-div">
+        
+        <figure class="avatar-img-div mx-auto">
           <img
           class="img-fluid"
             src="{{url_for('static', filename='img/avatar-singer.jpg')}}"
             alt=""
           />
           <figcaption>Chanteur</figcaption>
+          <input class="form-check-input" type="radio" name="avatar" id="chanteur" aria-label="chanteur"/>
         </figure>
-        <figure class="avatar-img-div">
+        <figure class="avatar-img-div mx-auto">
           <img
           class="img-fluid"
             src="{{url_for('static', filename='img/avatar-guitarist.jpg')}}"
             alt=""
           />
           <figcaption>Guitariste</figcaption>
+          <input class="form-check-input" type="radio" name="avatar" id="guitariste" aria-label="guitariste"/>
         </figure>
-        <figure class="avatar-img-div">
+        <figure class="avatar-img-div mx-auto">
           <img
           class="img-fluid"
             src="{{url_for('static', filename='img/avatar-drummer.jpg')}}"
             alt=""
           />
           <figcaption>Drummer</figcaption>
+          <input class="form-check-input" type="radio" name="avatar" id="drummer" aria-label="drummer"/>
         </figure>
       </div>
     </fieldset>
     <div class="mt-5 text-center">
-      <button type="submit" class="btn btn-outline-secondary m-2" aria-label="envoyer">
+      <button type="submit" class="btn btn-outline-primary m-2" aria-label="envoyer">
         Envoyer
       </button>
-      <button type="button" class="btn btn-outline-secondary m-2" aria-label="aléatoire">
+      <button type="button" class="btn btn-outline-primary m-2" aria-label="aléatoire">
         Aléatoire 
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dice-6" viewBox="0 0 16 16">
           <path d="M13 1a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h10zM3 0a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V3a3 3 0 0 0-3-3H3z"/>
@@ -118,7 +138,7 @@
         </svg></i>
       </button>
       
-      <button type="reset" class="btn btn-outline-secondary m-2" aria-label="réinitialiser">
+      <button type="reset" class="btn btn-outline-primary m-2" aria-label="réinitialiser">
         Réinitialiser
       </button>
     </div>
