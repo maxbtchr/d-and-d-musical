@@ -3,14 +3,15 @@
 <div class="container-fluid col-md-10">
   <h1 class="text-center p-5">Créer Un Musicien</h1>
   <form
-    action="https://philippefleury.com/backend.php "
+    action="https://philippefleury.com/backend.php"
     method="POST"
     class="row"
   >
     <fieldset class="col-lg-6 p-5 border">
+      <legend class="visually-hidden">Choisir informations générales</legend>
       <h2 class="text-center mb-5">Information Générale</h2>
       <div class="mb-3">
-        <label id="nom" for="Nom" class="form-label">Nom: </label>
+        <label id="nom" for="nom" class="form-label">Nom: </label>
         
         <input
           aria-label="nom"
@@ -33,7 +34,7 @@
       <h3 class="h5 mt-5">Instrument</h3>
       <div class="form-check">
         <input class="form-check-input" type="radio" name="voix" id="voix" aria-label="voix"/>
-        <label class="form-check-label" for="instrument"> Voix </label>
+        <label class="form-check-label" for="voix"> Voix </label>
       </div>
       <div class="form-check">
         <input
@@ -43,15 +44,15 @@
           id="guitare"
           aria-label="guitare"
         />
-        <label class="form-check-label" for="instrument"> Guitare </label>
+        <label class="form-check-label" for="guitare"> Guitare </label>
       </div>
       <div class="form-check">
         <input class="form-check-input" type="radio" name="basse" id="basse" aria-label="basse"/>
-        <label class="form-check-label" for="instrument"> Basse </label>
+        <label class="form-check-label" for="basse"> Basse </label>
       </div>
       <div class="form-check">
         <input class="form-check-input" type="radio" name="drums" id="drums" aria-label="batterie"/>
-        <label class="form-check-label" for="instrument"> Drums </label>
+        <label class="form-check-label" for="drums"> Drums </label>
       </div>
 
       <h3 class="h5 mt-5">Pouvoirs Musicaux</h3>
@@ -70,28 +71,29 @@
 
       <h3 class="h5 mt-5">Couleur d'avatar</h3>
       <div class="form-check">
-        <label class="form-check-label" for="instrument"> Choisir un couleur </label>
-        <input class="" type="color" name="coleur" id="coleur" aria-label="couleur"/>
+        <label class="form-check-label" for="couleur"> Choisir une couleur </label>
+        <input class="" type="color" name="couleur" id="couleur" aria-label="couleur"/>
         
       </div>
 
       <h3 class="h5 mt-5">Télécharger votre photo</h3>
       <div class="form-check">
-        <label class="form-check-label" for="instrument">Choisissez une photo ou sélectionnez un avatar par défaut</label>
-        <input class="" type="file" name="photo" id="photo" aria-label="photo"/>
+        <label class="form-check-label">Choisissez une photo ou sélectionnez un avatar par défaut</label>
+        <input class="" type="file" name="photo" id="photo" aria-label="choisir avatar"/>
         <input class="form-check-input" type="radio" name="avatar" id="mon-photo" aria-label="mon-photo"/>
       </div>
       
 
     </fieldset>
     <fieldset class="col-lg-6 p-5 border">
+      <legend class="visually-hidden">Choisir un avatar</legend>
       <h2 class="text-center">Avatar</h2>
       <div class="text-center">
         <figure class="avatar-img-div text-center mx-auto">
           <img
             class="img-fluid"
             src="{{url_for('static', filename='img/avatar-bassist.jpg')}}"
-            alt=""
+            alt="avatar de bassiste"
           />
           <figcaption>Bassiste</figcaption>
           <input class="form-check-input" type="radio" name="avatar" id="bassiste" aria-label="bassiste"/>
@@ -101,7 +103,7 @@
           <img
           class="img-fluid"
             src="{{url_for('static', filename='img/avatar-singer.jpg')}}"
-            alt=""
+            alt="avatar de chanteur"
           />
           <figcaption>Chanteur</figcaption>
           <input class="form-check-input" type="radio" name="avatar" id="chanteur" aria-label="chanteur"/>
@@ -110,7 +112,7 @@
           <img
           class="img-fluid"
             src="{{url_for('static', filename='img/avatar-guitarist.jpg')}}"
-            alt=""
+            alt="avatar de guitariste"
           />
           <figcaption>Guitariste</figcaption>
           <input class="form-check-input" type="radio" name="avatar" id="guitariste" aria-label="guitariste"/>
@@ -119,7 +121,7 @@
           <img
           class="img-fluid"
             src="{{url_for('static', filename='img/avatar-drummer.jpg')}}"
-            alt=""
+            alt="avatar de drummer"
           />
           <figcaption>Drummer</figcaption>
           <input class="form-check-input" type="radio" name="avatar" id="drummer" aria-label="drummer"/>
@@ -135,7 +137,7 @@
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dice-6" viewBox="0 0 16 16">
           <path d="M13 1a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h10zM3 0a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V3a3 3 0 0 0-3-3H3z"/>
           <path d="M5.5 4a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm8 0a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0 8a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-4a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm-8 4a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-4a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
-        </svg></i>
+        </svg>
       </button>
       
       <button type="reset" class="btn btn-outline-primary m-2" aria-label="réinitialiser">
@@ -144,6 +146,5 @@
     </div>
   </form>
 </div>
-<script src=""></script>
 
 {% endblock %}
